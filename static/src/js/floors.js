@@ -12,13 +12,9 @@ odoo.define('pos_change_table.floors', function (require) {
 // the floor plan
 chrome.OrderSelectorWidget.include({
     change_floor_button_click_handler: function(){
-        console.log("click!! change table");
         this.pos.change_table = true;
-        console.log("this.pos.change_table",this.pos.change_table);
+        this.pos.previous_order= this.pos.get_extra_product_id_for_table();
         this.pos.previous_order_id = this.pos.get_order();
-        //console.log("this.previous_order_id.table",this.previous_order_id.table);
-        //this.pos.previous_table = this.previous_order_id;
-        console.log("this.pos.previous_order_id",this.pos.previous_order_id);
         this.pos.set_table(null);
 
     },
