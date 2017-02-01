@@ -14,6 +14,8 @@ chrome.OrderSelectorWidget.include({
     change_floor_button_click_handler: function(){
         this.pos.change_table = true;
         this.pos.previous_order= this.pos.get_extra_product_id_for_table();
+        this.pos.previous_order_couple = this.pos.get_additional_couple_product_id_for_table();
+        this.pos.quantity_of_couples = this.pos.get_quantity_of_couples();
         this.pos.previous_order_id = this.pos.get_order();
         this.pos.set_table(null);
 
